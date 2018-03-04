@@ -8,10 +8,11 @@ const express = require('express'),
       auth0Strategy = require('passport-auth0'),
       env = require('dotenv').config({path: './server/config/.env'}),
       app = express(),
+      imageUpload = require('./aws/aws'),
       port = 3001;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -61,9 +62,17 @@ passport.use(new auth0Strategy({
     if (response[0]) {
         return done(null, { user_id: response[0].user_id })
     } else {
-      let name = '',
+      let email = '',
           picture = '',
-          userId = ''
+          subscriptions = 0,
+          memes = 0,
+          likes = 0,
+          comments = 0,
+          username = '',
+          headline = '',
+          userId = '',
+          name = '';
+          
       if (profile.displayName) {
         name = profile.displayName;
       } else if (profile.name.givenName && profile.name.familyName) {
@@ -77,7 +86,12 @@ passport.use(new auth0Strategy({
       if (profile.picture) {
         picture = profile.picture;
       }
-      db.createUser([name, picture, userId]).then((response)=>{
+      if (profile.email) {
+        email = profile.email;
+      } else if (profile.emails[0].value) {
+        email = profile.emails[0].value;
+      }
+      db.createUser([email, picture, subscriptions, memes, likes, comments, username, headline, userId, name]).then((response)=>{
         return done(null, { user_id: response[0].user_id })
       })
     }
@@ -125,7 +139,19 @@ app.get('/auth/logout', (req, res) => {
   req.logOut();
   res.redirect(302,  process.env.REACT_APP_HOST)
 })
-
+app.get('/api/getMemeDetails/:id', CTRL.getMemeDetails);
+app.post('/api/submitUsername', CTRL.submitUsername);
+app.post('/api/postMeme', CTRL.postMeme);
+app.post('/api/upload',(req, res) => {
+  imageUpload.sendPics(req.body.pic, (response, err) => {
+    if (err) {
+      console.log("IMAGE UPLOAD ERRROR")
+      console.log(err);
+      res.status(500).end();
+    }
+      res.status(200).send(response);
+  })
+})
 // finish
 
 app.get('*', (req, res)=>{

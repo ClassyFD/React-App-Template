@@ -1,0 +1,274 @@
+.Landing {
+  background:#171a1e;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 55px;
+}
+.landing-main-container {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+}
+.landing-left-section {
+  max-width: 500px;
+  min-width: 500px;
+  min-height: 930px;
+  height: auto;
+  position: relative;
+}
+.landing-right-section {
+  width: 48%;
+  min-height: 930px;
+  display: grid;
+  grid-template: 29px 10px 230px 40px 90px 40px auto / auto;
+  position: relative;
+}
+.landing-right-section-title {
+  display: grid;
+  grid-area: 1 / 1;
+  font-size: 24px;
+  line-height: 29px;
+  font-family: 'iFunnyExtraBold';
+  color: hsla(0,0%,100%,.3);
+  text-align: center;
+}
+h1 {
+  margin: 0;
+}
+.landing-right-section-app-container {
+  display: grid;
+  grid-area: 3 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+.landing-right-section-app-top-image {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.landing-right-section-app-bottom {
+  display: flex;
+  font-size: 14px;
+  font-family: 'iFunnyExtraBoldCond';
+  justify-content: space-between;
+  width: 300px;
+  color: white;
+  margin-top:2px;
+}
+.landing-right-section-app-bottom-left {
+  background:#080d11;
+  height: 68px;
+  width: 98px;
+  border-bottom-left-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.landing-right-section-app-bottom-right:hover .landing-amazon-image {
+  background: url('https://ifunny.co/images/icons/amazon-active.svg') no-repeat center center;
+}
+.landing-right-section-app-bottom-middle:hover .landing-google-play-image {
+  background: url('https://ifunny.co/images/icons/google-play-active.svg') no-repeat center center;
+}
+.landing-app-store-image {
+  background: url('https://ifunny.co/images/icons/app-store.svg') no-repeat center center;
+  background-size: cover;
+  height: 24px;
+  width: 20px;
+  opacity: .5;
+}
+.landing-app-store-text {
+  opacity: .5;
+}
+.landing-right-section-app-bottom-middle {
+  background:#080d11;
+  height: 68px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.landing-google-play-image {
+  background: url('https://ifunny.co/images/icons/google-play.svg') no-repeat center center;
+  background-size: cover;
+  height: 22px;
+  width: 20px;
+  opacity: .5;
+}
+.landing-google-play-text {
+  opacity: .5;
+}
+.landing-right-section-app-bottom-right {
+  background:#080d11;
+  height: 68px;
+  width: 98px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.landing-amazon-image {
+ background: url('https://ifunny.co/images/icons/amazon.svg') no-repeat center center;
+ background-size: cover;
+ height: 24px;
+ width: 25px;
+ opacity: .5;
+}
+.landing-amazon-text {
+  opacity: .5;
+}
+.landing-right-side-cam {
+  display: grid;
+  grid-area: 5 / 1;
+  background: url('https://ifunny.co/images/iFunnyCam.png') no-repeat center center;
+  background-size: cover;
+  width: 300px;
+  height: 90px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.landing-right-side-sticky {
+  height: 83vh;
+  display: grid;
+  grid-area: 7 / 1;
+  top:400px;
+  position: relative;
+}
+.landing-right-side-sticky-active {
+  top: 450px;
+}
+.landing-sticky-section {
+  display: grid;
+  flex-direction: column;
+  grid-template: 29px 12px auto 40px 2px 12px 29px 12px 20px 30px 19px 12px 15px 12px 15px / auto;
+}
+.landing-sticky-section-tags-title {
+  display: grid;
+  grid-area: 1 / 1;
+  font-size: 24px;
+  line-height: 29px;
+  font-family: 'iFunnyExtraBold';
+  color: hsla(0,0%,100%,.3);
+  text-align: center;
+}
+.landing-sticky-section-tags {
+
+}
+.landing-sticky-section-line {
+  display: grid;
+  height: 2px; 
+  width: 300px;
+  background-color: hsla(0,0%,30%,.3);
+  grid-area: 5 / 1;
+  margin: 0 auto;
+}
+.landing-sticky-section-follow-title {
+  display: grid;
+  grid-area: 7 / 1;
+  font-size: 24px;
+  line-height: 29px;
+  font-family: 'iFunnyExtraBold';
+  color: hsla(0,0%,100%,.3);
+  text-align: center;
+}
+.landing-sticky-section-follow-buttons {
+  display: flex;
+  grid-area: 9 / 1;
+  align-items: center;
+  justify-content: space-around;
+  width: 150px;
+  margin: 0 auto;
+}
+.landing-sticky-section-facebook {
+  background: url('../../Images/Icons/facebook-icon.png') no-repeat center center;
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.landing-sticky-section-twitter {
+  background: url('../../Images/Icons/twitter-icon.png') no-repeat center center;
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  border-radius: 8px; 
+  cursor: pointer;
+}
+.landing-sticky-section-instagram {
+  background: url('../../Images/Icons/instagram-icon.png') no-repeat center center;
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.landing-sticky-section-chef {
+  display: flex;
+  grid-area: 11 / 1;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  width: 120px;
+  cursor: pointer;
+}
+.landing-sticky-section-chef-logo {
+  background: url('https://ifunny.co/images/icons/twitter-small.svg') no-repeat center center;
+  background-size: cover;
+  height: 17px;
+  width: 20px;
+  opacity: .3;
+}
+.landing-sticky-section-chef-title {
+  font-family: 'iFunnyExtraBoldCond';
+  font-size: 20px;
+  color: white;
+  opacity: .6;
+}
+.landing-sticky-section-links {
+  display: flex;
+  grid-area: 13 / 1;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+}
+.landing-sticky-section-privacy {
+  color: white;
+  font-family: 'iFunnyBold';
+  font-size: 18px;
+  opacity: .3;
+  text-decoration: none;
+}
+.landing-sticky-section-dot {
+  color: white;
+  font-family: 'iFunnyBold';
+  font-size: 18px;
+  opacity: .3;
+}
+.landing-sticky-section-terms {
+  color: white;
+  font-family: 'iFunnyBold';
+  font-size: 18px;
+  opacity: .3;
+  text-decoration: none;
+}
+.landing-sticky-section-copyright {
+  color: white;
+  font-family: 'iFunnyBold';
+  font-size: 18px;
+  grid-area: 15 / 1;
+  opacity: .3;
+  text-align: center;
+}

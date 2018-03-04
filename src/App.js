@@ -1,12 +1,30 @@
 import React, { Component } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Landing from './Components/Landing/Landing';
+import Header from './Components/Header/Header';
+import MemeEditing from './Components/MemeEditing/MemeEditing';
+import Cam from './Components/Cam/Cam';
+import Profile from './Components/Profile/Profile';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        
-      </div>
+        <main className="App">
+          <Header/>
+          <Switch>
+            <Route exact path='/' render={()=>{
+              return (
+                <Redirect to='/app'/>
+              )
+            }} />
+            <Route path='/app' component={Landing}/>
+            <Route path='/edit' component={MemeEditing}/>
+            <Route path='/cam' component={Cam}/>
+            <Route path='/profile' component={Profile}/>
+            <Redirect from='*' to='/app'/>
+          </Switch>
+        </main>
     );
   }
 }

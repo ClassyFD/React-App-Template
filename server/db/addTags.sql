@@ -1,0 +1,1 @@
+INSERT INTO tags (tag_text, meme_id) VALUES ($1, $2)

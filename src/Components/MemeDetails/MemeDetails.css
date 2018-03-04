@@ -1,0 +1,17 @@
+.meme-details-caption-section {
+  background: black;
+  width: 440px;
+  height: auto;
+  padding: 30px;
+  text-align: center;
+  font-family: 'iFunnyBold';
+  font-size: 20px;
+  color: white;
+  word-wrap: break-word;
+  margin-top:-3px;
+}
+.MemeDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
